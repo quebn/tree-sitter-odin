@@ -8,6 +8,7 @@
   (tuple_type)
   (call_expression)
   (switch_case)
+  (overloaded_procedure_declaration)
 ] @indent.begin
 
 ; hello(
@@ -24,6 +25,7 @@
 (union_declaration "}" @indent.branch @indent.end)
 (struct_declaration "}" @indent.branch @indent.end)
 (struct "}" @indent.branch @indent.end)
+(overloaded_procedure_declaration "}" @indent.branch @indent.end)
 
 [
   (comment)
