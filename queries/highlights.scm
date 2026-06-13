@@ -76,6 +76,22 @@
 ; Variables
 (identifier) @variable
 
+; Fields
+(member_expression
+  "."
+  (identifier) @variable.member)
+
+(struct_type
+  "{"
+  (identifier) @variable.member)
+
+(struct_field
+  (identifier) @variable.member
+  "="?)
+
+(field
+  (identifier) @variable.member)
+
 ; Namespaces
 (package_declaration
   (identifier) @module)
@@ -194,22 +210,6 @@
 ((identifier) @type
   (#lua-match? @type "^[_A-Z][_a-zA-Z0-9]*$")
   (#not-has-parent? @type parameter procedure_declaration call_expression))
-
-; Fields
-(member_expression
-  "."
-  (identifier) @variable.member)
-
-(struct_type
-  "{"
-  (identifier) @variable.member)
-
-(struct_field
-  (identifier) @variable.member
-  "="?)
-
-(field
-  (identifier) @variable.member)
 
 ; Constants
 ((identifier) @constant
