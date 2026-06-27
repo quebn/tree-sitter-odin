@@ -105,24 +105,6 @@
 (using_statement
   (identifier) @module)
 
-; Parameters
-(parameter
-  (identifier) @variable.parameter
-  ":"
-  "="?
-  (identifier)? @constant)
-
-(default_parameter
-  (identifier) @variable.parameter
-  ":=")
-
-(named_type
-  (identifier) @variable.parameter)
-
-(call_expression
-  argument: (identifier) @variable.parameter
-  "=")
-
 ; Functions
 (procedure_declaration
   (identifier) @type)
@@ -210,6 +192,24 @@
 ((identifier) @type
   (#lua-match? @type "^[_A-Z][_a-zA-Z0-9]*$")
   (#not-has-parent? @type parameter procedure_declaration call_expression))
+
+; Parameters
+(parameter
+  (identifier) @variable.parameter
+  ":"
+  "="?
+  (identifier)? @constant)
+
+(default_parameter
+  (identifier) @variable.parameter
+  ":=")
+
+(named_type
+  (identifier) @variable.parameter)
+
+(call_expression
+  argument: (identifier) @variable.parameter
+  "=")
 
 ; Constants
 ((identifier) @constant
