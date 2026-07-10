@@ -27,7 +27,7 @@
 (struct_declaration "}" @indent.branch @indent.end)
 (struct "}" @indent.branch @indent.end)
 (overloaded_procedure_declaration "}" @indent.branch @indent.end)
-(tag "}" @indent.branch @indent.end)
+; (tag "}" @indent.branch @indent.end)
 [
   (comment)
   (block_comment)
