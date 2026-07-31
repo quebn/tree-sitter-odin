@@ -3,7 +3,7 @@
   (enum_declaration)
   (union_declaration)
   (struct_declaration)
-  (struct)
+  ;(struct)
   (parameters)
   (tuple_type)
   (call_expression)
@@ -25,7 +25,7 @@
 (enum_declaration "}" @indent.branch @indent.end)
 (union_declaration "}" @indent.branch @indent.end)
 (struct_declaration "}" @indent.branch @indent.end)
-(struct "}" @indent.branch @indent.end)
+;(struct "}" @indent.branch @indent.end)
 (overloaded_procedure_declaration "}" @indent.branch @indent.end)
 ; (tag "}" @indent.branch @indent.end)
 [
